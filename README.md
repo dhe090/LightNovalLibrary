@@ -7,4 +7,5 @@ Member name: Dahong He
 <br/>
 Student number: 300063385
 <br/>
-email address: dhe090@uOttawa.ca
+email address: dhe090@uOttawa.ca  
+
