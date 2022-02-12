@@ -154,12 +154,19 @@ ul,ol,li{
     border-top-color:#000
 }
 
-#main{
-    display:block;
+#main {
+    display: block;
+    height: 800px;
+    width: 1800px;
+    position: relative;
+    background: url(LightNovalLibrary/733833.jpg) repeat;
+
+}
+
+#leftbar{
+    float:left;
     height:800px;
-    width:1800px;
-    position:relative;
-    background:url(LightNovalLibrary/733833.jpg) repeat;
+    background:url(LightNovalLibrary/Concordia-Webster.jpg) repeat;
 
 }
 
