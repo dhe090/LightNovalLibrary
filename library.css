@@ -427,16 +427,7 @@ input:hover::-webkit-input-placeholder {
 }
 
 
-.login1 input[type="text"],input[type="password"]{
-    font-size: 1em;
-    font-weight:100;
-    margin: 3em 0 0;
-    width: 93%;
-    display: block;
-    border: none;
-    padding: 1em;
 
-}
 .login1 .text:focus,.login1 .text:valid {
     box-shadow: none;
     outline: none;
@@ -501,6 +492,32 @@ input:hover::-webkit-input-placeholder {
     width: 1.2em;
     height: 1.2em;
 }
+/*register*/
+
+.card {
+    border: none;
+    background-color: #97a8c7;
+    color: #fff
+}
+
+
+.form-input i {
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 10px
+}
+
+.form-control {
+    height: 60px;
+    background-color: #e5e9ef;
+    text-indent: 10px;
+    font-size: 17px
+}
+
+
+
+/*done*/
 
 #right{
     position:relative;
