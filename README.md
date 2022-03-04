@@ -16,6 +16,11 @@ For color, we used the build in color method to use color on our website
 color:#F00
 border-top-color:#000
 
+For font, we use the
+font-family:"Times New Roman";
+font-style:italic;
+font-weight: bold;
+
 For the image, we use the 
 background:url(LightNovalLibrary/Concordia-Webster.jpg)
 to achieve the functionality of implementing images into our website
