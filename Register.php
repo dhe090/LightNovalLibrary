@@ -46,7 +46,7 @@ if(isset($_POST['checkboxes']) && $_POST['checkboxes']!="")
 	echo 'you need to check the aggrement!';
 }
 
-$registerSQL = "insert into users values('$email','$userName','$password')";
+$registerSQL = "insert into users values('$email','$password','$userName')";
 mysqli_query($connection,$registerSQL);
 $userID = mysqli_insert_id($connection);
 echo " successfully registered!<br>";
