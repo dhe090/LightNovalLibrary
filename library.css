@@ -231,10 +231,20 @@ button{
     border:none;
     font-size:20px;
 }
+button2{
+     width:190px;
+     height:55px;
+     float: right;
+     background-color: #155fa8;
+     border:none;
+     font-size:20px;
+ }
 button:hover{
     cursor:pointer;
 }
-
+button2:hover{
+    cursor:pointer;
+}
 input::-webkit-input-placeholder{
     font-size:18px;
     padding-left:40px;
