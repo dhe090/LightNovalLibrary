@@ -15,6 +15,7 @@ if (!empty($connection)) {
         header("refresh:3; url=LibraryMainPage.html");
     }else{
         echo "login fail!";
+        header("refresh:3; url=LibraryMainPage.html");
     }
 }
 
