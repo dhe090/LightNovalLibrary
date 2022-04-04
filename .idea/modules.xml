@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/LightNovalLibrary.iml" filepath="$PROJECT_DIR$/.idea/LightNovalLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../csi3140_playground/csi3140_playground/tut06/tut06.iml" filepath="$PROJECT_DIR$/../../csi3140_playground/csi3140_playground/tut06/tut06.iml" />
     </modules>
   </component>
 </project>

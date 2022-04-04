@@ -29,14 +29,11 @@
   
   <div id="sort">
     <ul id="book1">
-      <li class="Category"><a href="#">Category</a></li>
-      <li class="Classic"><a href="#">Classic</a></li>
-      <li class="Science fiction"><a href="#">Science fiction</a></li>
-      <li class="Daily"><a href="#">Daily</a></li>
-      <li class="Phantasy"><a href="#">Phantasy</a></li>
-      <li class="Arts"><a href="#">Arts</a></li>
-      <li class="School"><a href="#">School</a></li>
-      <li class="Mystics"><a href="#">Mystics</a></li>
+      <li class="Category"><a href="post.php">Category</a></li>
+      <li class="Science fiction"><a href="post.php">Science fiction</a></li>
+      <li class="War"><a href="post.php">War</a></li>
+      <li class="Phantasy"><a href="post.php">Phantasy</a></li>
+      <li class="School"><a href="post.php">School</a></li>
     </ul>
   </div>
   <!--sort-->
@@ -54,32 +51,23 @@
         <ul>
           <li><img src="LightNovalLibrary/862.jpg" ></li>
           <li><img src="LightNovalLibrary/wolf1.jpg" ></li>
-          <!--
-          <li><img src="images/book2.jpg" ></li>
-          <li><img src="images/lunbo2.jpg"></li>
-          <li><img src="images/shan.png"></li>
-          <li><img src="images/book3.jpg" ></li>
-          -->
+          <li><img src="LightNovalLibrary/aword.png" ></li>
         </ul>
       </div>
       <!--banner-->
-      <div class="nexImg"><img src="LightNovalLibrary/next2.png" /></div>
-      <div class="preImg"><img src="LightNovalLibrary/next.png" /></div>
-      <!-- not yet done
+      <div class="nexImg"><img src="LightNovalLibrary/nextImg.png" /></div>
+      <div class="preImg"><img src="LightNovalLibrary/preImg.png" /></div>
       <div class="jumpBtn">
         <ul>
           <li jumpImg="0"></li>
           <li jumpImg="1"></li>
           <li jumpImg="2"></li>
-          <li jumpImg="3"></li>
-          <li jumpImg="4"></li>
-          <li jumpImg="5"></li>
         </ul>
       </div>
-      -->
-    </div>  <!--c-banner-->
+      
+    </div>
   
-  </div><!--tu-->
+  </div>
   
   
 
@@ -129,6 +117,7 @@
     </div>
 
   </div><!--login_page-->
+  </div>
 </form>
   
   <div id="right"> <span>Project 3140 Dahong He's first tryout</span> </div><!--rightt-->
@@ -142,8 +131,104 @@
 	 * 导航栏
 	 * footer CopyRight
 	 */
-    $(".headerpage").load("Header.html");
+    $(".headerpage").load("Header.php");
   });
+
+
+  $(function(){
+    var time=null;
+    //image position
+    var nexImg = 0;
+    var imgLength = $(".c-banner .banner ul li").length;
+
+    $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+    
+    $(document).ready(function(){
+      // dynamicData();
+      //timer is 5 second to change picture
+      time =setInterval(intervalImg,5000);
+    });
+
+//click on previous picture
+    $(".preImg").click(function(){
+      //clear the timer
+      clearInterval(time);
+      var nowImg = nexImg;
+      nexImg = nexImg-1;
+      console.log(nexImg);
+      if(nexImg<0){
+        nexImg=imgLength-1;
+      }
+      $(".c-banner .jumpBtn ul li").css("background-color","white");
+      $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+    
+      //positioning the image
+      $(".c-banner .banner ul img").eq(nowImg).css("position","absolute");
+      $(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+      
+      $(".c-banner .banner ul li").eq(nexImg).css("display","block");
+      $(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+      $(".c-banner .banner ul li").eq(nowImg).stop().animate({"opacity":0},1000,function(){
+        $(".c-banner ul li").eq(nowImg).css("display","none");
+      });
+    
+      //set time interval
+      time =setInterval(intervalImg,5000);
+    })
+    
+    $(".nexImg").click(function(){
+      clearInterval(time);
+      intervalImg();
+      time =setInterval(intervalImg,5000);
+    })
+    
+    function intervalImg(){
+      if(nexImg<imgLength-1){
+        nexImg++;
+      }else{
+        nexImg=0;
+      }
+      
+      $(".c-banner .banner ul img").eq(nexImg-1).css("position","absolute");
+      $(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+    
+      $(".c-banner .banner ul li").eq(nexImg).css("display","block");
+      $(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+      $(".c-banner .banner ul li").eq(nexImg-1).stop().animate({"opacity":0},1000,function(){
+        $(".c-banner .banner ul li").eq(nexImg-1).css("display","none");
+      });
+      $(".c-banner .jumpBtn ul li").css("background-color","white");
+      $(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+    }
+    
+    $(".c-banner .jumpBtn ul li").each(function(){
+      
+      $(this).click(function(){
+        clearInterval(time);
+        $(".c-banner .jumpBtn ul li").css("background-color","white");
+        jumpImg = $(this).attr("jumpImg");
+        if(jumpImg!=nexImg){
+          var after =$(".c-banner .banner ul li").eq(jumpImg);
+          var befor =$(".c-banner .banner ul li").eq(nexImg);
+          
+          $(".c-banner .banner ul img").eq(nexImg).css("position","absolute");
+          $(".c-banner .banner ul img").eq(jumpImg).css("position","relative");
+        
+          after.css("display","block");
+          after.stop().animate({"opacity":1},1000);
+          befor.stop().animate({"opacity":0},1000,function(){
+            befor.css("display","none");
+          });
+          nexImg=jumpImg;
+        }
+        $(this).css("background-color","black");
+        time =setInterval(intervalImg,5000);
+      });
+    });
+  });
+  
+ 
+
 </script>
 
 </body>
