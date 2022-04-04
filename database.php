@@ -5,7 +5,7 @@
 function getConnection(){
 	//php get database information
     $hostname = 'localhost';
-    $database = 'pprofile';
+    $database = 'users1';
     $userName = 'root';
     $password = '123456';
     global $connection;

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>headerfile</title>
 	<link rel="stylesheet" type="text/css" href="library.css">
-	
+
 </head>
 <body>
 <div class="top">
@@ -25,10 +25,9 @@
 					<li><a href="#">English</a></li>
 				</ul>
 			</li>
-			<li><a href="personalprofilepage.html">Personal Page</a>
+			<li><a href="personalprofilepage.php">Personal Page</a>
 			</li>
-			<li><a href="#">My Library</a></li>
-			<li><a href="#">My uploads</a></li>
+			<li><a href="post.php">Post new topic</a></li>
 		</ul>
 		<div class="clear"></div>
 	</div>
@@ -48,7 +47,17 @@
 			</li>
 			<li><a href="#">New Event</a></li>
 			<li><a href="#">Covid-19 Donation</a></li>
-			<li><a href="LibraryMainPage.html#login_page">Log In</a></li>
+            <?php
+            session_start();
+            if(!isset($_SESSION['userName']))
+            {
+                echo '<li><a href="LibraryMainPage.html#login">Login</a></li>';
+            }
+            else
+            {
+                echo '<li><a href="logout.php">Logout</a></li>';
+            }
+            ?>
 		</ul>
 	</div> <!--mulu-->
 </div>
