@@ -8,7 +8,7 @@ Member name: Dahong He
 Student number: 300063385
 <br/>
 email address: dhe090@uOttawa.ca   
-Deliverable 2 ReadMe
+
 <br/>
 Please see the ReadmeFinal.pdf for details of the project  
 The database is mysql, with wampserver and apache, and bootstrap 5 for html.  
