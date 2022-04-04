@@ -50,6 +50,7 @@
 							<option> Phantasy </option>
 							<option> School </option>
 						</select>
+						<button1 type="submit" value = "Save Profile"  class="btn btn-primary btn-lg mt-3">Create a new post</button1>
 					</div>
 				</div>
 			</div>
